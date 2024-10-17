@@ -6,7 +6,9 @@ NIM=nms.es.f5net.com
 START_ITR=1
 END_ITR=105
 DIR=$(pwd)
-CREDS=$(echo -n admin:admin | base64)
+NIM_ADMIN="admin"
+NIM_PASS="admin"
+CREDS=$(echo -n $NIM_ADMIN:$NIM_PASS | base64)
 SYSTEM_UID=704253e9-233c-3277-bbc7-a343a3be34e2
 INSTANCE=9ec4ec22-5463-56c6-9d26-ee27d815ff07
 DELETE_CERTS="false"
@@ -37,5 +39,6 @@ do
   rm -rf $DIR/certs/test$i.example.com > /dev/null
   sleep 0.1
 done
+
 
 
